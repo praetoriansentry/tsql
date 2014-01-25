@@ -1,4 +1,0 @@
-tsql
-====
-
-Transact-SQL Formatter
