@@ -10,8 +10,11 @@ using Microsoft.SqlServer.SqlParser.Parser;
 
 namespace TSQLFormatter
 {
-    interface Interpreter
+    abstract class Interpreter
     {
-        string Interpret(Formatter.ParseUnit pu);
+        public string Interpret(Formatter.ParseUnit pu)
+        {
+            return pu.token.Value.Text;
+        }
     }
 }
