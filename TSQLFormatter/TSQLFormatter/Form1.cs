@@ -17,9 +17,12 @@ namespace TSQLFormatter
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        private void formatSqlButton_Click(object sender, EventArgs e)
+        {
+            inputSql.Text = "hello, world!";
+            outputSql.Text = "testing testing";
         }
+
     }
 }

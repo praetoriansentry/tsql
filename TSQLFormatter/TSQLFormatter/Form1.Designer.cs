@@ -31,9 +31,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.formatSqlButton = new System.Windows.Forms.Button();
+            this.inputSql = new System.Windows.Forms.RichTextBox();
+            this.outputSql = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,9 +46,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.richTextBox2, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.formatSqlButton, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.inputSql, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.outputSql, 0, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -69,7 +69,6 @@
             this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Input SQL:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -81,35 +80,37 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Output SQL:";
             // 
-            // button1
+            // formatSqlButton
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 435);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(477, 20);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Format SQL";
-            this.button1.UseVisualStyleBackColor = true;
+            this.formatSqlButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.formatSqlButton.Location = new System.Drawing.Point(3, 435);
+            this.formatSqlButton.Name = "formatSqlButton";
+            this.formatSqlButton.Size = new System.Drawing.Size(477, 20);
+            this.formatSqlButton.TabIndex = 2;
+            this.formatSqlButton.Text = "Format SQL";
+            this.formatSqlButton.UseVisualStyleBackColor = true;
+            this.formatSqlButton.Click += new System.EventHandler(this.formatSqlButton_Click);
             // 
-            // richTextBox1
+            // inputSql
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(3, 28);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(477, 185);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.inputSql.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputSql.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputSql.Location = new System.Drawing.Point(3, 28);
+            this.inputSql.Name = "inputSql";
+            this.inputSql.Size = new System.Drawing.Size(477, 185);
+            this.inputSql.TabIndex = 3;
+            this.inputSql.Text = "";
             // 
-            // richTextBox2
+            // outputSql
             // 
-            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(3, 244);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(477, 185);
-            this.richTextBox2.TabIndex = 4;
-            this.richTextBox2.Text = "";
+            this.outputSql.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.outputSql.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputSql.Location = new System.Drawing.Point(3, 244);
+            this.outputSql.Name = "outputSql";
+            this.outputSql.ReadOnly = true;
+            this.outputSql.Size = new System.Drawing.Size(477, 185);
+            this.outputSql.TabIndex = 4;
+            this.outputSql.Text = "";
             // 
             // Form1
             // 
@@ -130,9 +131,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button formatSqlButton;
+        private System.Windows.Forms.RichTextBox inputSql;
+        private System.Windows.Forms.RichTextBox outputSql;
     }
 }
 
