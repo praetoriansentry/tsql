@@ -14,6 +14,12 @@ namespace TSQLFormatter
             Console.WriteLine(t.Type);
             switch (t.Type)
             {
+                case "TOKEN_GROUP":
+                    return new Interpreters.Group();
+                case "TOKEN_ORDER":
+                    return new Interpreters.Order();
+                case "TOKEN_BY":
+                    return new Interpreters.By();
                 case "TOKEN_JOIN":
                     return new Interpreters.Join();
                 case "TOKEN_RIGHT":

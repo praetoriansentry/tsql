@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TSQLFormatter.Interpreters
 {
-    class Join : Interpreter
+    class By : Interpreter
     {
         public override string Interpret(Formatter.ParseUnit pu)
         {
@@ -16,13 +16,13 @@ namespace TSQLFormatter.Interpreters
                 LinkedListNode<Token> t = pu.token;
                 for(int i = 0; i < 3; i = i + 1) {
                     t = t.Previous;
-                    if (t.Value.Type == "TOKEN_OUTER" || t.Value.Type == "TOKEN_LEFT" || t.Value.Type == "TOKEN_RIGHT") {
+                    if (t.Value.Type == "TOKEN_ORDER" || t.Value.Type == "TOKEN_GROUP") {
                         return pu.token.Value.Text.ToUpper() + this.GetNewLine(pu);
                     }
                 }
             } catch (Exception) {
             }
-            return this.FormatOwnLine(pu);
+            return pu.token.Value.Text.ToUpper();
         }
     }
 }

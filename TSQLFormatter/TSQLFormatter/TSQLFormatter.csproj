@@ -57,7 +57,10 @@
     <Compile Include="Interpreter.cs" />
     <Compile Include="InterpreterFactory.cs" />
     <Compile Include="Interpreters\And.cs" />
+    <Compile Include="Interpreters\By.cs" />
+    <Compile Include="Interpreters\Order.cs" />
     <Compile Include="Interpreters\Join.cs" />
+    <Compile Include="Interpreters\Group.cs" />
     <Compile Include="Interpreters\Right.cs" />
     <Compile Include="Interpreters\Left.cs" />
     <Compile Include="Interpreters\Where.cs" />
