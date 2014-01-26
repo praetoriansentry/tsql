@@ -9,7 +9,7 @@ namespace TSQLFormatter.Interpreters
 {
     class Paren : Interpreter
     {
-        public override string Interpret(Formatter.ParseUnit pu)
+        public override string Interpret(ref Formatter.ParseUnit pu)
         {
             if (pu.token.Value.Type == "(")
             {

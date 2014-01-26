@@ -9,7 +9,7 @@ namespace TSQLFormatter.Interpreters
 {
     class And : Interpreter
     {
-        public override string Interpret(Formatter.ParseUnit pu)
+        public override string Interpret(ref Formatter.ParseUnit pu)
         {
             return this.GetNewLine(pu) + pu.token.Value.Text.ToUpper();
         }

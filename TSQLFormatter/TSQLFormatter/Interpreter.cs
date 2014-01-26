@@ -14,7 +14,7 @@ namespace TSQLFormatter
     {
         protected string indentString = "    ";
 
-        public virtual string Interpret(Formatter.ParseUnit pu)
+        public virtual string Interpret(ref Formatter.ParseUnit pu)
         {
             return pu.token.Value.Text;
         }

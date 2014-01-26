@@ -29,7 +29,7 @@ namespace TSQLFormatter
 
             while(pu.token != null) {
                 Interpreter interp = InterpreterFactory.Get(pu.token.Value);
-                outSql += interp.Interpret(pu);
+                outSql += interp.Interpret(ref pu);
                 pu.token = pu.token.Next;
             }
 

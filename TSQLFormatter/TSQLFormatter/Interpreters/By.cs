@@ -9,7 +9,7 @@ namespace TSQLFormatter.Interpreters
 {
     class By : Interpreter
     {
-        public override string Interpret(Formatter.ParseUnit pu)
+        public override string Interpret(ref Formatter.ParseUnit pu)
         {
             // Check to see if this join is on it's own.
             try {
