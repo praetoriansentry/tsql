@@ -17,7 +17,21 @@ namespace TSQLFormatter.Interpreters
             }
             else
             {
-                pu.clauseStack.Pop();
+                Token t = pu.clauseStack.Peek();
+                if (t.Type == "(")
+                {
+                    pu.clauseStack.Pop();
+                }
+                else if (t.Type == "TOKEN_SELECT" && pu.clauseStack.Count > 1)
+                {
+                    pu.clauseStack.Pop(); // Take a select off the stack
+                    if (pu.clauseStack.Peek().Type == "(")
+                    {
+                        pu.clauseStack.Pop(); // Remove the wrapping parentheis
+                        pu.indentDepth = pu.indentDepth - 1;
+                        return this.GetNewLine(pu) + pu.token.Value.Text;
+                    }
+                }
             }
 
             return pu.token.Value.Text;
