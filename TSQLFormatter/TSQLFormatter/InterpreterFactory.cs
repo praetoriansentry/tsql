@@ -14,6 +14,18 @@ namespace TSQLFormatter
             Console.WriteLine(t.Type);
             switch (t.Type)
             {
+                case "TOKEN_JOIN":
+                    return new Interpreters.Join();
+                case "TOKEN_RIGHT":
+                    return new Interpreters.Right();
+                case "TOKEN_LEFT":
+                    return new Interpreters.Left();
+                case "TOKEN_AND":
+                    return new Interpreters.And();
+                case "TOKEN_WHERE":
+                    return new Interpreters.Where();
+                case "TOKEN_FROM":
+                    return new Interpreters.From();
                 case "(":
                     return new Interpreters.Paren();
                 case ")":

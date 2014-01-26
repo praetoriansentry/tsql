@@ -56,9 +56,15 @@
     <Compile Include="Formatter.cs" />
     <Compile Include="Interpreter.cs" />
     <Compile Include="InterpreterFactory.cs" />
+    <Compile Include="Interpreters\And.cs" />
+    <Compile Include="Interpreters\Join.cs" />
+    <Compile Include="Interpreters\Right.cs" />
+    <Compile Include="Interpreters\Left.cs" />
+    <Compile Include="Interpreters\Where.cs" />
     <Compile Include="Interpreters\Paren.cs" />
     <Compile Include="Interpreters\Default.cs" />
     <Compile Include="Interpreters\Comma.cs" />
+    <Compile Include="Interpreters\From.cs" />
     <Compile Include="Interpreters\Select.cs" />
     <Compile Include="Interpreters\White.cs" />
     <Compile Include="Program.cs" />
