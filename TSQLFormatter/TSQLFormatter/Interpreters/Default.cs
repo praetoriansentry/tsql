@@ -8,8 +8,5 @@ namespace TSQLFormatter.Interpreters
 {
     class Default : Interpreter
     {
-        public new string Interpret (Formatter.ParseUnit pu) {
-            return pu.token.Value.Text;
-        }
     }
 }

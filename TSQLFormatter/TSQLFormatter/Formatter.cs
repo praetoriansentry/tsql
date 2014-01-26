@@ -23,7 +23,7 @@ namespace TSQLFormatter
             }
 
             ParseUnit pu = new ParseUnit();
-            pu.indentDepth = 0;
+            pu.indentDepth = -1;
             pu.clauseStack = new Stack<Token>();
             pu.token = tokenList.First;
 

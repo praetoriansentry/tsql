@@ -14,6 +14,14 @@ namespace TSQLFormatter
             Console.WriteLine(t.Type);
             switch (t.Type)
             {
+                case "(":
+                    return new Interpreters.Paren();
+                case ")":
+                    return new Interpreters.Paren();
+                case ",":
+                    return new Interpreters.Comma();
+                case "TOKEN_SELECT":
+                    return new Interpreters.Select();
                 case "LEX_WHITE":
                     return new Interpreters.White();
                 default:

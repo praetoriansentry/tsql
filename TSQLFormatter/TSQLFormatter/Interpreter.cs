@@ -12,9 +12,25 @@ namespace TSQLFormatter
 {
     abstract class Interpreter
     {
-        public string Interpret(Formatter.ParseUnit pu)
+        protected string indentString = "    ";
+
+        public virtual string Interpret(Formatter.ParseUnit pu)
         {
             return pu.token.Value.Text;
+        }
+
+        protected string GetNewLine(Formatter.ParseUnit pu) {
+            string newLine = "";
+            for (int i = 0; i < pu.indentDepth; i = i + 1)
+            {
+                newLine = newLine + this.indentString;
+            }
+            return Environment.NewLine + newLine;
+        }
+
+        protected string FormatOwnLine(Formatter.ParseUnit pu)
+        {
+            return this.GetNewLine(pu) + this.GetNewLine(pu) + pu.token.Value.Text.ToUpper() + this.GetNewLine(pu);
         }
     }
 }

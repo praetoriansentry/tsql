@@ -8,7 +8,7 @@ namespace TSQLFormatter.Interpreters
 {
     class White : Interpreter
     {
-        public new string Interpret(Formatter.ParseUnit pu)
+        public override string Interpret(Formatter.ParseUnit pu)
         {
             return " ";
         }
