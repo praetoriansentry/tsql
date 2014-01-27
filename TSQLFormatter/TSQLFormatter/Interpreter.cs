@@ -36,7 +36,8 @@ namespace TSQLFormatter
         {
             string[] typesToLeaveAlone = {
                                              "TOKEN_ID",
-                                             "TOKEN_STRING"
+                                             "TOKEN_STRING",
+                                             "TOKEN_VARIABLE"
                                          };
             if (typesToLeaveAlone.Contains(tokenType))
             {

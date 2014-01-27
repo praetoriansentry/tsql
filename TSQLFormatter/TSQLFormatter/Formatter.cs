@@ -38,7 +38,7 @@ namespace TSQLFormatter
                 outSql += sqlString;
             }
 
-            return outSql;
+            return outSql.Trim();
         }
 
         public struct ParseUnit
