@@ -18,8 +18,8 @@ namespace TSQLFormatter.Interpreters
                 t = pu.clauseStack.Peek();
                 if (t.Type == "TOKEN_SELECT" || t.Type == "TOKEN_UPDATE" || t.Type == "TOKEN_DELETE" || t.Type == "TOKEN_INSERT")
                 {
-                    //pu.clauseStack.Clear();
-                    //pu.indentDepth = -1;
+                    pu.clauseStack.Clear();
+                    pu.indentDepth = -1;
                 }
             }
             catch (Exception)

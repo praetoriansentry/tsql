@@ -23,6 +23,10 @@ namespace TSQLFormatter
             Console.WriteLine(t.Type);
             switch (t.Type)
             {
+                case "LEX_END_OF_LINE_COMMENT":
+                    return new Interpreters.Comment();
+                case "LEX_MULTILINE_COMMENT":
+                    return new Interpreters.Comment();
                 case "TOKEN_END":
                     return new Interpreters.End();
                 case "TOKEN_BEGIN":

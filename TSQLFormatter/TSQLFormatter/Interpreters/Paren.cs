@@ -34,7 +34,9 @@ namespace TSQLFormatter.Interpreters
                 }
             }
 
-            return " " + pu.token.Value.Text + " ";
+                return " " + pu.token.Value.Text + " ";
+
+
         }
     }
 }

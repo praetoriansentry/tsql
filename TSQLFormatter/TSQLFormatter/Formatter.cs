@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.SqlServer.SqlParser.Parser;
+using System.Windows.Forms;
 
 namespace TSQLFormatter
 {
@@ -11,6 +12,7 @@ namespace TSQLFormatter
     {
         public string Format(String inputSql)
         {
+
             var pr = Parser.Parse(inputSql.Trim());
             string outSql = "";
 

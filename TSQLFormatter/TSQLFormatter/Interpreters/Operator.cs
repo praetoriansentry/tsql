@@ -25,6 +25,8 @@ namespace TSQLFormatter.Interpreters
                                            };
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
+
+            // TODO this needs to be changed so that if there is already white space around the token, we don't add more.
             if (pu.token.Previous != null && Operator.operators.Contains(pu.token.Previous.Value.Type))
             {
                 return pu.token.Value.Text + " ";
