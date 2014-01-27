@@ -57,6 +57,9 @@
     <Compile Include="Interpreter.cs" />
     <Compile Include="InterpreterFactory.cs" />
     <Compile Include="Interpreters\And.cs" />
+    <Compile Include="Interpreters\Begin.cs" />
+    <Compile Include="Interpreters\End.cs" />
+    <Compile Include="Interpreters\While.cs" />
     <Compile Include="Interpreters\Next.cs" />
     <Compile Include="Interpreters\By.cs" />
     <Compile Include="Interpreters\Operator.cs" />

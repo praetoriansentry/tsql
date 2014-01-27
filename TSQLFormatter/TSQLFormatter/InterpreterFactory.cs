@@ -23,6 +23,12 @@ namespace TSQLFormatter
             Console.WriteLine(t.Type);
             switch (t.Type)
             {
+                case "TOKEN_END":
+                    return new Interpreters.End();
+                case "TOKEN_BEGIN":
+                    return new Interpreters.Begin();
+                case "TOKEN_WHILE":
+                    return new Interpreters.While();
                 case "TOKEN_FETCH":
                     return new Interpreters.Fetch();
                 case "TOKEN_NEXT":
