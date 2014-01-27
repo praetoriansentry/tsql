@@ -32,5 +32,17 @@ namespace TSQLFormatter
         {
             return this.GetNewLine(pu) + this.GetNewLine(pu) + pu.token.Value.Text.ToUpper() + this.GetNewLine(pu);
         }
+        protected bool shouldCapitalize(string tokenType)
+        {
+            string[] typesToLeaveAlone = {
+                                             "TOKEN_ID",
+                                             "TOKEN_STRING"
+                                         };
+            if (typesToLeaveAlone.Contains(tokenType))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

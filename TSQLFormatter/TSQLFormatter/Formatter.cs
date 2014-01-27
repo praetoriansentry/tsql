@@ -25,12 +25,17 @@ namespace TSQLFormatter
             ParseUnit pu = new ParseUnit();
             pu.indentDepth = -1;
             pu.clauseStack = new Stack<Token>();
+            pu.sqlBits = new LinkedList<string>();
             pu.token = tokenList.First;
 
             while(pu.token != null) {
                 Interpreter interp = InterpreterFactory.Get(pu.token.Value);
-                outSql += interp.Interpret(ref pu);
+                pu.sqlBits.AddLast(interp.Interpret(ref pu));
                 pu.token = pu.token.Next;
+            }
+
+            foreach (String sqlString in pu.sqlBits) {
+                outSql += sqlString;
             }
 
             return outSql;
@@ -40,6 +45,7 @@ namespace TSQLFormatter
         {
             public LinkedListNode<Token> token;
             public Stack<Token> clauseStack;
+            public LinkedList<string> sqlBits;
             public int indentDepth;
         }
     }

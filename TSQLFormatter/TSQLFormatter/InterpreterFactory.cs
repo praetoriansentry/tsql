@@ -14,6 +14,8 @@ namespace TSQLFormatter
             Console.WriteLine(t.Type);
             switch (t.Type)
             {
+                case "TOKEN_ON":
+                    return new Interpreters.On();
                 case "TOKEN_GROUP":
                     return new Interpreters.Group();
                 case "TOKEN_ORDER":
