@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TSQLFormatter.Interpreters
 {
-    class Select : Interpreter
+    class Declare : Interpreter
     {
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
@@ -19,35 +19,15 @@ namespace TSQLFormatter.Interpreters
                 if (t.Type == "TOKEN_SELECT" || t.Type == "TOKEN_UPDATE" || t.Type == "TOKEN_DELETE" || t.Type == "TOKEN_INSERT")
                 {
                     pu.clauseStack.Clear();
-                    pu.indentDepth = 0;
+                    pu.indentDepth = -1;
                 }
             }
             catch (Exception)
             {
 
             }
-            bool shouldIncreaseIndent = this.shouldIncreaseIndent(pu);
             pu.clauseStack.Push(pu.token.Value);
-            if (shouldIncreaseIndent)
-            {
-                pu.indentDepth = pu.indentDepth + 1;
-
-            }
             return this.FormatOwnLine(pu);
-
-        
-        }
-        protected bool shouldIncreaseIndent(Formatter.ParseUnit pu)
-        {
-            
-            foreach (Token t in pu.clauseStack)
-            {
-                if (t.Type == "TOKEN_SELECT" || t.Type == "TOKEN_UPDATE" || t.Type == "TOKEN_DELETE" || t.Type == "TOKEN_INSERT")
-                {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }

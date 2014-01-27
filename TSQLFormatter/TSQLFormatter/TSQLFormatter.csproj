@@ -60,6 +60,8 @@
     <Compile Include="Interpreters\Begin.cs" />
     <Compile Include="Interpreters\End.cs" />
     <Compile Include="Interpreters\Comment.cs" />
+    <Compile Include="Interpreters\Declare.cs" />
+    <Compile Include="Interpreters\Set.cs" />
     <Compile Include="Interpreters\While.cs" />
     <Compile Include="Interpreters\Next.cs" />
     <Compile Include="Interpreters\By.cs" />

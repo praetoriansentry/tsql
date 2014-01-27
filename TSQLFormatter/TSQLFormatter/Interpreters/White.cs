@@ -11,9 +11,10 @@ namespace TSQLFormatter.Interpreters
 {
     class White : Interpreter
     {
+        protected static Regex wsCheck = new Regex(@"\s$");
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
-            Regex r = new Regex(@"\s$");
+            Regex r = White.wsCheck;
             if (r.IsMatch(pu.sqlBits.Last.Value)) {
                 return "";
             }

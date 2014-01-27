@@ -20,9 +20,12 @@ namespace TSQLFormatter
         }
         public static Interpreter Get(Token t)
         {
-            Console.WriteLine(t.Type);
             switch (t.Type)
             {
+                case "TOKEN_SET":
+                    return new Interpreters.Set();
+                case "TOKEN_DECLARE":
+                    return new Interpreters.Declare();
                 case "LEX_END_OF_LINE_COMMENT":
                     return new Interpreters.Comment();
                 case "LEX_MULTILINE_COMMENT":

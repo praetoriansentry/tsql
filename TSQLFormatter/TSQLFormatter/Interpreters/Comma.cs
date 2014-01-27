@@ -21,7 +21,7 @@ namespace TSQLFormatter.Interpreters
                 return ", ";
             }
 
-            if (t.Type == "TOKEN_SELECT")
+            if (t.Type == "TOKEN_SELECT" || t.Type == "TOKEN_DECLARE")
             {
                 return "," + this.GetNewLine(pu);
             }
