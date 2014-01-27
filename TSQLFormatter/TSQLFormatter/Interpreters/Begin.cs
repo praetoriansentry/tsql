@@ -12,8 +12,12 @@ namespace TSQLFormatter.Interpreters
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
             pu.clauseStack.Push(pu.token.Value);
+
+            string returnString = this.GetNewLine(pu) + pu.token.Value.Text.ToUpper();
+
             pu.indentDepth = pu.indentDepth + 1;
-            return this.FormatOwnLine(pu);
+            returnString += this.GetNewLine(pu);
+            return returnString;
         }
     }
 }

@@ -11,7 +11,12 @@ namespace TSQLFormatter.Interpreters
     {
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
-            return this.GetNewLine(pu) + pu.token.Value.Text;
+            if (pu.token.Next != null && pu.token.Next.Value.Text == "LEX_END_OF_LINE_COMMENT")
+            {
+                return this.GetNewLine(pu) + pu.token.Value.Text;
+
+            }
+            return this.GetNewLine(pu) + pu.token.Value.Text + this.GetNewLine(pu);
         }
     }
 }

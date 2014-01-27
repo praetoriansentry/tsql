@@ -32,7 +32,7 @@ namespace TSQLFormatter
             bw.ReportProgress(20);
 
             ParseUnit pu = new ParseUnit();
-            pu.indentDepth = -1;
+            pu.indentDepth = 0;
             pu.clauseStack = new Stack<Token>();
             pu.sqlBits = new LinkedList<string>();
             pu.token = tokenList.First;
