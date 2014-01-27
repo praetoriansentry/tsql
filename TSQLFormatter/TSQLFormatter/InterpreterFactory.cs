@@ -23,6 +23,10 @@ namespace TSQLFormatter
             Console.WriteLine(t.Type);
             switch (t.Type)
             {
+                case "TOKEN_FETCH":
+                    return new Interpreters.Fetch();
+                case "TOKEN_NEXT":
+                    return new Interpreters.Next();
                 case "TOKEN_ON":
                     return new Interpreters.On();
                 case "TOKEN_GROUP":
