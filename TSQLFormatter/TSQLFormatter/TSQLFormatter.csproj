@@ -58,6 +58,7 @@
     <Compile Include="InterpreterFactory.cs" />
     <Compile Include="Interpreters\And.cs" />
     <Compile Include="Interpreters\By.cs" />
+    <Compile Include="Interpreters\Operator.cs" />
     <Compile Include="Interpreters\On.cs" />
     <Compile Include="Interpreters\Order.cs" />
     <Compile Include="Interpreters\Join.cs" />

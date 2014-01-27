@@ -18,14 +18,14 @@ namespace TSQLFormatter.Interpreters
             }
             catch (Exception)
             {
-                return ",";
+                return ", ";
             }
 
             if (t.Type == "TOKEN_SELECT")
             {
                 return "," + this.GetNewLine(pu);
             }
-            return ",";
+            return ", ";
         }
     }
 }

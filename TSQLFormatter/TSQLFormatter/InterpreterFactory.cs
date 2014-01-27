@@ -9,6 +9,15 @@ namespace TSQLFormatter
 {
     class InterpreterFactory
     {
+        protected static bool isOperator(Token t)
+        {
+            string[] opTypes = Interpreters.Operator.operators;
+            if (opTypes.Contains(t.Type))
+            {
+                return true;
+            }
+            return false;
+        }
         public static Interpreter Get(Token t)
         {
             Console.WriteLine(t.Type);
@@ -45,6 +54,10 @@ namespace TSQLFormatter
                 case "LEX_WHITE":
                     return new Interpreters.White();
                 default:
+                    if (InterpreterFactory.isOperator(t))
+                    {
+                        return new Interpreters.Operator();
+                    }
                     return new Interpreters.Default();
             }
         }
