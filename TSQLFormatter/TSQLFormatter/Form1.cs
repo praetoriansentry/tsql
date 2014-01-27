@@ -40,8 +40,15 @@ namespace TSQLFormatter
                     inputSql.Invoke(new MethodInvoker(delegate { sqlString = inputSql.Text; }));
                 }
 
-                args.Result = f.Format(sqlString);
+                args.Result = f.Format(sqlString, b);
 
+            });
+
+            // what to do when progress changed (update the progress bar for example)
+            bw.ProgressChanged += new ProgressChangedEventHandler(
+            delegate(object o, ProgressChangedEventArgs args)
+            {
+                outputSql.Text = string.Format("{0}% Completed", args.ProgressPercentage);
             });
 
             // what to do when worker completes its task (notify the user)
