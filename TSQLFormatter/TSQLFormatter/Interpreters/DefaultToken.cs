@@ -7,16 +7,11 @@ using System.Threading.Tasks;
 
 namespace TSQLFormatter.Interpreters
 {
-    class Declare : Interpreter
+    class DefaultToken : Interpreter
     {
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
-            pu.clauseStack.Clear();
-                
-            pu.indentDepth = 0;
-
-            pu.clauseStack.Push(pu.token.Value);
-            return this.FormatOwnLine(pu);
+            return pu.token.Value.Text.ToUpper();
         }
     }
 }

@@ -22,6 +22,32 @@ namespace TSQLFormatter
         {
             switch (t.Type)
             {
+                case "TOKEN_REFERENCES":
+                    return new Interpreters.References();
+                case "TOKEN_CONSTRAINT":
+                    return new Interpreters.Constraint();
+                case "TOKEN_AS":
+                    return new Interpreters.As();
+                case "TOKEN_CLUSTERED":
+                    return new Interpreters.Clustered();
+                case "TOKEN_s_IO_ONOFFOPTION":
+                    return new Interpreters.SIOOnOffOption();
+                case "TOKEN_OFF":
+                    return new Interpreters.Off();
+                case "TOKEN_UNIQUE":
+                    return new Interpreters.Unique();
+                case "TOKEN_ROWGUIDCOL":
+                    return new Interpreters.Rowguidcol();
+                case "TOKEN_KEY":
+                    return new Interpreters.Key();
+                case "TOKEN_PRIMARY":
+                    return new Interpreters.Primary();
+                case "TOKEN_DEFAULT":
+                    return new Interpreters.DefaultToken();
+                case "TOKEN_IDENTITY":
+                    return new Interpreters.Identity();
+                case "TOKEN_CREATE":
+                    return new Interpreters.Create();
                 case "TOKEN_TABLE":
                     return new Interpreters.Table();
                 case "TOKEN_DROP":

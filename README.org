@@ -15,3 +15,6 @@ class library.  Check [[http://technet.microsoft.com/en-us/library/microsoft.sql
 - Properly indentation for ~AND~ and ~OR~ clauses that are nested
   within parenthesis
 - Add unit testing?
+- For special cases like ~CREATE~, ~UPDATE~, ~DELETE~ reset the
+  clause stack... assuming these aren't statements.
+- Making the spacing around ()'s more normal
