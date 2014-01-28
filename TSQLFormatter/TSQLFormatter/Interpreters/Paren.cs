@@ -29,7 +29,7 @@ namespace TSQLFormatter.Interpreters
                     {
                         pu.clauseStack.Pop(); // Remove the wrapping parentheis
                         pu.indentDepth = pu.indentDepth - 1;
-                        return this.GetNewLine(pu) + pu.token.Value.Text;
+                        return this.GetNewLine(pu) + pu.token.Value.Text + " ";
                     }
                 }
             }

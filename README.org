@@ -8,3 +8,10 @@ it would be a good idea to write one!
 It has also be quite difficult to find a good lexer / parser for
 TSQL.  The only one that I could find was part of the SQL Server
 class library.  Check [[http://technet.microsoft.com/en-us/library/microsoft.sqlserver.management.sqlparser.parser.aspx][here]] for more details.
+
+** Future Stuff
+
+- Add configuration support
+- Properly indentation for ~AND~ and ~OR~ clauses that are nested
+  within parenthesis
+- Add unit testing?
