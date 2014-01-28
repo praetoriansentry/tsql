@@ -22,6 +22,10 @@ namespace TSQLFormatter
         {
             switch (t.Type)
             {
+                case "TOKEN_TABLE":
+                    return new Interpreters.Table();
+                case "TOKEN_DROP":
+                    return new Interpreters.Drop();
                 case "TOKEN_NULL":
                     return new Interpreters.Null();
                 case "TOKEN_IS":

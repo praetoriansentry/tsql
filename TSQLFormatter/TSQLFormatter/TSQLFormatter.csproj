@@ -57,9 +57,11 @@
     <Compile Include="Interpreter.cs" />
     <Compile Include="InterpreterFactory.cs" />
     <Compile Include="Interpreters\Cross.cs" />
+    <Compile Include="Interpreters\Table.cs" />
     <Compile Include="Interpreters\Execute.cs" />
     <Compile Include="Interpreters\Full.cs" />
     <Compile Include="Interpreters\Go.cs" />
+    <Compile Include="Interpreters\Drop.cs" />
     <Compile Include="Interpreters\Null.cs" />
     <Compile Include="Interpreters\Not.cs" />
     <Compile Include="Interpreters\Like.cs" />
