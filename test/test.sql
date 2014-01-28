@@ -98,3 +98,20 @@ SET @AvgWeight =
    PRINT 'Average weight of the Touring-3000 bikes is ' + CAST(@AvgWeight AS varchar(8)) + '.' ;
 END ;
 GO
+
+
+-- Make sure is/not/null works fine
+IF object_id('tempdb..#foo') IS NOT NULL
+BEGIN
+    DROP TABLE
+        #foo
+END
+CREATE TABLE
+    #foo
+    (
+        bucket    VARCHAR(50),
+        sent      bigint,
+        delivered bigint,
+        failed    bigint,
+        bounced   bigint
+    )
