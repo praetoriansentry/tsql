@@ -16,7 +16,11 @@ namespace TSQLFormatter.Interpreters
                 LinkedListNode<Token> t = pu.token;
                 for(int i = 0; i < 3; i = i + 1) {
                     t = t.Previous;
-                    if (t.Value.Type == "TOKEN_OUTER" || t.Value.Type == "TOKEN_LEFT" || t.Value.Type == "TOKEN_RIGHT") {
+                    if (t.Value.Type == ")")
+                    {
+                        break;
+                    }
+                    if (this.IsToken(t.Value)) {
                         return pu.token.Value.Text.ToUpper() + this.GetNewLine(pu);
                     }
                 }

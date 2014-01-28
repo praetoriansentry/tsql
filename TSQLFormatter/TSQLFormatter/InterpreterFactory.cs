@@ -22,6 +22,24 @@ namespace TSQLFormatter
         {
             switch (t.Type)
             {
+                case "TOKEN_FULL":
+                    return new Interpreters.Full();
+                case "TOKEN_CROSS":
+                    return new Interpreters.Cross();
+                case "TOKEN_OUTER":
+                    return new Interpreters.Outer();
+                case "TOKEN_VARIABLE":
+                    return new Interpreters.Variable();
+                case "TOKEN_WITH":
+                    return new Interpreters.With();
+                case "TOKEN_ID":
+                    return new Interpreters.Id();
+                case "TOKEN_STRING":
+                    return new Interpreters.String();
+                case "TOKEN_NUMERIC":
+                    return new Interpreters.Numeric();
+                case "TOKEN_INTEGER":
+                    return new Interpreters.Integer();
                 case "TOKEN_OR":
                     return new Interpreters.Or();
                 case "TOKEN_WHEN":

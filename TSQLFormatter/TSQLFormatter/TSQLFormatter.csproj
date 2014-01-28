@@ -56,6 +56,15 @@
     <Compile Include="Formatter.cs" />
     <Compile Include="Interpreter.cs" />
     <Compile Include="InterpreterFactory.cs" />
+    <Compile Include="Interpreters\Cross.cs" />
+    <Compile Include="Interpreters\Full.cs" />
+    <Compile Include="Interpreters\Outer.cs" />
+    <Compile Include="Interpreters\Variable.cs" />
+    <Compile Include="Interpreters\With.cs" />
+    <Compile Include="Interpreters\Id.cs" />
+    <Compile Include="Interpreters\String.cs" />
+    <Compile Include="Interpreters\Numeric.cs" />
+    <Compile Include="Interpreters\Integer.cs" />
     <Compile Include="Interpreters\Or.cs" />
     <Compile Include="Interpreters\And.cs" />
     <Compile Include="Interpreters\Case.cs" />

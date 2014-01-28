@@ -34,11 +34,6 @@ namespace TSQLFormatter.Interpreters
 
             }
 
-            if (this.shouldSingleReturn(pu))
-            {
-                return this.GetNewLine(pu) + pu.token.Value.Text.ToUpper() + this.GetNewLine(pu);
-            }
-            
             return this.FormatOwnLine(pu);
 
         
@@ -56,23 +51,5 @@ namespace TSQLFormatter.Interpreters
             return false;
         }
 
-        protected bool shouldSingleReturn(Formatter.ParseUnit pu)
-        {
-            LinkedListNode<Token> t = pu.token;
-            for (int i = 0; i < 3; i = i + 1)
-            {
-                if (t.Previous == null)
-                {
-                    // there is nothing before the select statement... so we can just do the normal stuff and it will get trimmed off
-                    return false;
-                }
-                if (t.Previous.Value.Type == "(" || t.Previous.Value.Type == "LEX_END_OF_LINE_COMMENT")
-                {
-                    return true;
-                }
-                t = t.Previous;
-            }
-            return false;
-        }
     }
 }
