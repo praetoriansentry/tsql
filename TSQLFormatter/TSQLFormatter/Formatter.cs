@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.SqlServer.SqlParser.Parser;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 
 namespace TSQLFormatter
@@ -52,6 +53,7 @@ namespace TSQLFormatter
                 outSql += sqlString;
             }
 
+            outSql = Regex.Replace(outSql, @"^(\s*)$", "", RegexOptions.Multiline);
             return outSql.Trim();
         }
 

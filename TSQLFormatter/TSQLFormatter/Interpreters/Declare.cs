@@ -19,7 +19,7 @@ namespace TSQLFormatter.Interpreters
                 if (t.Type == "TOKEN_SELECT" || t.Type == "TOKEN_UPDATE" || t.Type == "TOKEN_DELETE" || t.Type == "TOKEN_INSERT")
                 {
                     pu.clauseStack.Clear();
-                    pu.indentDepth = -1;
+                    pu.indentDepth = 0;
                 }
             }
             catch (Exception)

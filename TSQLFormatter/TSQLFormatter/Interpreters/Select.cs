@@ -16,11 +16,12 @@ namespace TSQLFormatter.Interpreters
             try
             {
                 t = pu.clauseStack.Peek();
-                if (t.Type == "TOKEN_SELECT" || t.Type == "TOKEN_UPDATE" || t.Type == "TOKEN_DELETE" || t.Type == "TOKEN_INSERT")
+                if (t.Type == "TOKEN_SELECT" || t.Type == "TOKEN_UPDATE" || t.Type == "TOKEN_DELETE" || t.Type == "TOKEN_INSERT" || t.Type == "TOKEN_DECLARE")
                 {
                     pu.clauseStack.Clear();
                     pu.indentDepth = 0;
                 }
+
             }
             catch (Exception)
             {
@@ -48,7 +49,20 @@ namespace TSQLFormatter.Interpreters
                     return true;
                 }
             }
-            return false;
+            LinkedListNode<Token> tNode = pu.token.Previous;
+            for (int i = 0; i < 2; i = i + 1)
+            {
+                if (tNode.Value == null)
+                {
+                    break;
+                }
+                if (tNode.Value.Type == "(")
+                {
+                    return true;
+                }
+                tNode = tNode.Previous;
+            }
+                return false;
         }
 
     }

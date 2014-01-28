@@ -22,6 +22,14 @@ namespace TSQLFormatter
         {
             switch (t.Type)
             {
+                case "TOKEN_EXECUTE":
+                    return new Interpreters.Execute();
+                case "TOKEN_LIKE":
+                    return new Interpreters.Like();
+                case "LEX_BATCH_SEPERATOR":
+                    return new Interpreters.Go();
+                case "TOKEN_USEDB":
+                    return new Interpreters.Use();
                 case "TOKEN_FULL":
                     return new Interpreters.Full();
                 case "TOKEN_CROSS":

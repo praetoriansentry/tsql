@@ -49,3 +49,52 @@ full join tname7 t7 with (nolock)
 on t7.id = t.id
 cross join tname8 t8 with (nolock)
 on t8.id = t.id
+
+-- Testing some functions
+
+select count(1), cast(2), getdate() + getdate(), isnull(1)
+from tname
+
+
+-- Example from http://technet.microsoft.com/en-us/library/ms182717.aspx
+DECLARE @compareprice money, @cost money
+EXECUTE Production.uspGetList '%Bikes%', 700,
+    @compareprice OUT,
+    @cost OUTPUT
+IF @cost <= @compareprice
+BEGIN
+    PRINT 'These products can be purchased for less than
+    $'+RTRIM(CAST(@compareprice AS varchar(20)))+'.'
+END
+ELSE
+    PRINT 'The prices for all products in this category exceed
+    $'+ RTRIM(CAST(@compareprice AS varchar(20)))+'.'
+
+
+-- Example from http://technet.microsoft.com/en-us/library/ms182587.aspx
+USE AdventureWorks2012;
+GO
+DECLARE @AvgWeight decimal(8,2), @BikeCount int
+IF
+(SELECT COUNT(*) FROM Production.Product WHERE Name LIKE 'Touring-3000%' ) > 5
+BEGIN
+   SET @BikeCount =
+        (SELECT COUNT(*)
+         FROM Production.Product
+         WHERE Name LIKE 'Touring-3000%');
+   SET @AvgWeight =
+        (SELECT AVG(Weight)
+         FROM Production.Product
+         WHERE Name LIKE 'Touring-3000%');
+   PRINT 'There are ' + CAST(@BikeCount AS varchar(3)) + ' Touring-3000 bikes.'
+   PRINT 'The average weight of the top 5 Touring-3000 bikes is ' + CAST(@AvgWeight AS varchar(8)) + '.';
+END
+ELSE
+BEGIN
+SET @AvgWeight =
+        (SELECT AVG(Weight)
+         FROM Production.Product
+         WHERE Name LIKE 'Touring-3000%' );
+   PRINT 'Average weight of the Touring-3000 bikes is ' + CAST(@AvgWeight AS varchar(8)) + '.' ;
+END ;
+GO
