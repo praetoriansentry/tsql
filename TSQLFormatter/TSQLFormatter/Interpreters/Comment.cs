@@ -11,12 +11,23 @@ namespace TSQLFormatter.Interpreters
     {
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
+            string comment = pu.token.Value.Text;
+            if (pu.token.Previous != null && pu.token.Value.Text != "LEX_END_OF_LINE_COMMENT")
+            {
+                //I want single comments to be on a line of their own
+                comment = this.GetNewLine(pu) + comment;
+            }
             if (pu.token.Next != null && pu.token.Next.Value.Text == "LEX_END_OF_LINE_COMMENT")
             {
-                return this.GetNewLine(pu) + pu.token.Value.Text;
-
+                // if there is another comment, don't add a return at the end
+                comment = this.GetNewLine(pu) + comment;
             }
-            return this.GetNewLine(pu) + pu.token.Value.Text + this.GetNewLine(pu);
+            else
+            {
+                comment = this.GetNewLine(pu) + comment + this.GetNewLine(pu);
+            }
+            return comment;
+
         }
     }
 }
