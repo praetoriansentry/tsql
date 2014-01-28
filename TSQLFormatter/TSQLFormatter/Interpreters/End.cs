@@ -13,7 +13,7 @@ namespace TSQLFormatter.Interpreters
         {
 
             Token t = pu.clauseStack.Peek();
-            if (t.Type == "TOKEN_BEGIN")
+            if (t.Type == "TOKEN_BEGIN" || t.Type == "TOKEN_CASE")
             {
                 pu.clauseStack.Pop();
                 pu.indentDepth -= 1;

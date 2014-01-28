@@ -22,6 +22,16 @@ namespace TSQLFormatter
         {
             switch (t.Type)
             {
+                case "TOKEN_OR":
+                    return new Interpreters.Or();
+                case "TOKEN_WHEN":
+                    return new Interpreters.When();
+                case "TOKEN_THEN":
+                    return new Interpreters.Then();
+                case "TOKEN_ELSE":
+                    return new Interpreters.Else();
+                case "TOKEN_CASE":
+                    return new Interpreters.Case();
                 case "TOKEN_SET":
                     return new Interpreters.Set();
                 case "TOKEN_DECLARE":
