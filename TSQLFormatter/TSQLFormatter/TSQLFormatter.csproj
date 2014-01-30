@@ -57,6 +57,7 @@
     <Compile Include="Interpreter.cs" />
     <Compile Include="InterpreterFactory.cs" />
     <Compile Include="Interpreters\Off.cs" />
+    <Compile Include="Interpreters\Distinct.cs" />
     <Compile Include="Interpreters\SIOOnOffOption.cs" />
     <Compile Include="Interpreters\Clustered.cs" />
     <Compile Include="Interpreters\As.cs" />
