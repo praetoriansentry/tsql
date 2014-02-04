@@ -52,7 +52,7 @@ namespace TSQLFormatter.Interpreters
             LinkedListNode<Token> tNode = pu.token.Previous;
             for (int i = 0; i < 2; i = i + 1)
             {
-                if (tNode.Value == null)
+                if (tNode == null)
                 {
                     break;
                 }
