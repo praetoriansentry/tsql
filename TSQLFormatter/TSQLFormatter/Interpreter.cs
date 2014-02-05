@@ -71,6 +71,10 @@ namespace TSQLFormatter
         }
         protected bool IsToken(Token t)
         {
+            if (t.Type == "TOKEN_ID")
+            {
+                return false;
+            }
             Regex r = new Regex(@"^TOKEN_.*");
             return r.IsMatch(t.Type);
         }
