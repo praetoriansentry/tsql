@@ -22,6 +22,8 @@ namespace TSQLFormatter
         {
             switch (t.Type)
             {
+                case "TOKEN_EXISTS":
+                    return new Interpreters.Exists();
                 case "TOKEN_DISTINCT":
                     return new Interpreters.Distinct();
                 case "TOKEN_REFERENCES":
