@@ -56,6 +56,7 @@
     <Compile Include="Formatter.cs" />
     <Compile Include="Interpreter.cs" />
     <Compile Include="InterpreterFactory.cs" />
+    <Compile Include="Interpreters\Semicolon.cs" />
     <Compile Include="Interpreters\Off.cs" />
     <Compile Include="Interpreters\Distinct.cs" />
     <Compile Include="Interpreters\Exists.cs" />

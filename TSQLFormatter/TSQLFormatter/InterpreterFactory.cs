@@ -22,6 +22,8 @@ namespace TSQLFormatter
         {
             switch (t.Type)
             {
+                case ";":
+                    return new Interpreters.Semicolon();
                 case "TOKEN_EXISTS":
                     return new Interpreters.Exists();
                 case "TOKEN_DISTINCT":
