@@ -28,7 +28,7 @@ namespace TSQLFormatter.Interpreters
                 pu.clauseStack.Push(pu.token.Value);
                 if (isCreate)
                 {
-                    return " " + pu.token.Value.Text + this.GetNewLine(pu);
+                    return pu.token.Value.Text + this.GetNewLine(pu);
                 }
 
 
@@ -64,7 +64,11 @@ namespace TSQLFormatter.Interpreters
                 }
             }
 
-            return " " + pu.token.Value.Text + " ";
+            if (pu.token.Value.Type == ")")
+            {
+                return pu.token.Value.Text + " ";
+            }
+            return pu.token.Value.Text;
 
 
         }

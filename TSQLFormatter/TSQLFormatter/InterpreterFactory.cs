@@ -22,6 +22,12 @@ namespace TSQLFormatter
         {
             switch (t.Type)
             {
+                case "TOKEN_PIVOT":
+                    return new Interpreters.Pivot();
+                case "TOKEN_ASC":
+                    return new Interpreters.Asc();
+                case "TOKEN_DESC":
+                    return new Interpreters.Desc();
                 case ";":
                     return new Interpreters.Semicolon();
                 case "TOKEN_EXISTS":

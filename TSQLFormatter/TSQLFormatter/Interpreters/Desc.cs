@@ -1,5 +1,4 @@
 ﻿using Microsoft.SqlServer.SqlParser.Parser;
-using Microsoft.SqlServer.SqlParser.Parser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace TSQLFormatter.Interpreters
 {
-    class From : Interpreter
+    class Desc : Interpreter
     {
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
-            return this.FormatOwnLine(pu);
+            return pu.token.Value.Text.ToUpper();
         }
     }
 }
