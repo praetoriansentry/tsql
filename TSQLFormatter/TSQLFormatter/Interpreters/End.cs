@@ -18,7 +18,7 @@ namespace TSQLFormatter.Interpreters
                 pu.clauseStack.Pop();
                 pu.indentDepth -= 1;
             }
-            return this.FormatOwnLine(pu);
+            return this.GetNewLine(pu) + pu.token.Value.Text.ToUpper() + this.GetNewLine(pu);
         }
     }
 }

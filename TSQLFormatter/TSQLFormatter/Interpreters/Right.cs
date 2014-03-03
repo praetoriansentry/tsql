@@ -11,7 +11,35 @@ namespace TSQLFormatter.Interpreters
     {
         public override string Interpret(ref Formatter.ParseUnit pu)
         {
-            return this.GetNewLine(pu) + this.GetNewLine(pu) + pu.token.Value.Text.ToUpper();
+            if (this.IsJoin(pu))
+            {
+                return this.GetNewLine(pu) + this.GetNewLine(pu) + pu.token.Value.Text.ToUpper();
+
+            }
+            else
+            {
+                return pu.token.Value.Text.ToUpper();
+            }
+        }
+        private Boolean IsJoin(Formatter.ParseUnit pu) {
+            LinkedListNode<Token> currentToken = pu.token;
+
+            for (int i = 0; i < 3; i = i + 1)
+            {
+                if (currentToken.Value.Type == "TOKEN_OUTER" || currentToken.Value.Type == "TOKEN_JOIN")
+                {
+                    return true; 
+                }
+                if (currentToken.Next != null)
+                {
+                    currentToken = currentToken.Next;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return false;
         }
     }
 }
