@@ -89,6 +89,7 @@
     <Compile Include="Interpreters\Use.cs" />
     <Compile Include="Interpreters\Outer.cs" />
     <Compile Include="Interpreters\Variable.cs" />
+    <Compile Include="Interpreters\Having.cs" />
     <Compile Include="Interpreters\With.cs" />
     <Compile Include="Interpreters\Id.cs" />
     <Compile Include="Interpreters\String.cs" />
