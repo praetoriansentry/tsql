@@ -60,6 +60,7 @@
     <Compile Include="Interpreters\Desc.cs" />
     <Compile Include="Interpreters\In.cs" />
     <Compile Include="Interpreters\Pivot.cs" />
+    <Compile Include="Interpreters\Delete.cs" />
     <Compile Include="Interpreters\Semicolon.cs" />
     <Compile Include="Interpreters\Off.cs" />
     <Compile Include="Interpreters\Distinct.cs" />
